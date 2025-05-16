@@ -44,7 +44,7 @@ ui <- fluidPage(
         tabPanel("Données", DTOutput("table")),
         tabPanel("Graphique", plotOutput("barplot")),
         tabPanel("Carte", leafletOutput("map")),
-        tabPanel("Résumé", verbatimTextOutput("summary")),
+        tabPanel("Résumé", verbatimTextOutput("som")),
         tabPanel("Sentiment", plotOutput("sentiment_plot")),
         tabPanel("Exemples", DTOutput("examples"))
       )
@@ -122,7 +122,7 @@ server <- function(input, output, session) {
       )
   })
   
-  output$summary <- renderPrint({
+  output$som <- renderPrint({
     summary(data_filtered()$review.label)
   })
   
