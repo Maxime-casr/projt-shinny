@@ -8,7 +8,6 @@ library(shinythemes)
 library(ggplot2)
 library(tools)
 
-# Nettoyage renforcé
 data_clean <- function(df) {
   clean_text <- function(x) {
     x <- iconv(x, from = "latin1", to = "UTF-8", sub = "")
@@ -23,7 +22,6 @@ data_clean <- function(df) {
   df
 }
 
-# Interface utilisateur
 ui <- fluidPage(
   theme = shinytheme("flatly"),
   titlePanel("Shopper Sentiments Dashboard"),
@@ -54,7 +52,6 @@ ui <- fluidPage(
   )
 )
 
-# Serveur
 server <- function(input, output, session) {
   
   data_user <- reactive({
