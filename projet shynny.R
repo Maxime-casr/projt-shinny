@@ -104,7 +104,7 @@ server <- function(input, output, session) {
   
   output$barplot <- renderPlot({
     ggplot(data_filtered(), aes_string(x = input$var_plot)) +
-      geom_bar(fill = "steelblue") +
+      geom_bar(fill = "blue") +
       labs(title = paste("Distribution de", input$var_plot), x = input$var_plot, y = "Fréquence")
   })
   
@@ -132,9 +132,9 @@ server <- function(input, output, session) {
       labs(title = "Analyse de sentiment des avis",
            x = "Catégorie de sentiment",
            y = "Nombre d'avis") +
-      scale_fill_manual(values = c("Positif" = "forestgreen", 
-                                   "Neutre" = "gold", 
-                                   "Négatif" = "firebrick")) +
+      scale_fill_manual(values = c("Positif" = "green", 
+                                   "Neutre" = "yellow", 
+                                   "Négatif" = "red")) +
       theme_minimal()
   })
   
