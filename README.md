@@ -11,7 +11,3 @@ Une application Shiny permettant d'explorer, nettoyer et visualiser des avis cli
 - Recherche par mot-clé, filtre par note et pays
 - Export des données filtrées
 
-## Lancer l'application
-
-```r
-shiny::runApp()
